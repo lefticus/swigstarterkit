@@ -1,6 +1,6 @@
 SUBDIRS=examples
 
-BUILT_SOURCES = $(PACKAGE_NAME)_wrap.h
+BUILT_SOURCES = $(PACKAGE_NAME)_wrap.hpp
 dist_data_DATA = languagespecific.i
 
 AM_CPPFLAGS = -I$(top_srcdir)/include $(LUA_CFLAGS)
