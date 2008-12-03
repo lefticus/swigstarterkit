@@ -29,5 +29,7 @@ AC_CONFIG_FILES([Makefile
                  lib/Makefile
                  swig/Makefile
                  swig/lua/Makefile
-                 swig/lua/examples/Makefile])
+                 swig/lua/examples/Makefile
+                 swig/perl/Makefile
+                 swig/perl/examples/Makefile])
 AC_OUTPUT
