@@ -1,3 +1,3 @@
-SUBDIRS=lua perl
+SUBDIRS=lua perl python
 
 dist_data_DATA=scriptinterface.i
