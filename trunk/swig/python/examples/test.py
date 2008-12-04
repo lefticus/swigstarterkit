@@ -1,5 +1,5 @@
-import SwigStarterKit
+import swigstarterkit 
 
-si = SwigStarterKit.Script_Interface();
+si = swigstarterkit.Script_Interface();
 
 print si.get_a_value();
