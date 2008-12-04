@@ -3,5 +3,5 @@ extern "C"
 #include "lua.h"
 }
 
-#include "SwigStarterKit_wrap.hpp"
+#include "swigstarterkit_wrap.hpp"
 

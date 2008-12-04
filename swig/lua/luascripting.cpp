@@ -8,7 +8,7 @@ extern "C"
 #include <lauxlib.h>
 }
 
-#include "SwigStarterKit_wrap.hpp"
+#include "swigstarterkit_wrap.hpp"
 
 namespace swigstarterkit 
 {

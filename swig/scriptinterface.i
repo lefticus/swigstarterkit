@@ -1,4 +1,4 @@
-%module(directors="1") SwigStarterKit
+%module swigstarterkit
 
 %include <std_string.i>
 %include <std_vector.i>
