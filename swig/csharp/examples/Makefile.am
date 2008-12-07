@@ -1,1 +1,1 @@
-dist_data_DATA=test.cs
+noinst_DATA=test.cs Makefile.test

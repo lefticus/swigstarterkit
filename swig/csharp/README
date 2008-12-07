@@ -1,0 +1,7 @@
+After running 'make install' in this folder you will have an additional Makefile and a set of .cs files created in the ./build folder.
+
+Running 'make' in ./build will create the necessary swigstarterkit.dll assembly
+
+Running 'make -f Makefile.test test' in ./examples will build the test program test.exe and execute
+
+Each of these directories shows examples of how you might use the c#/mono features in your library.

@@ -1,0 +1,7 @@
+Executing 'make' will generate all the files needed to build the Perl5 module including build/Makefile.PL
+
+The command:
+
+perl Makefile.PL
+
+Will generate a Makefile appropriate for building and installing the perl module

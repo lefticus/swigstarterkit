@@ -1,1 +1,1 @@
-dist_data_DATA=test.lua loadabletest.lua
+noinst_DATA=test.lua loadabletest.lua

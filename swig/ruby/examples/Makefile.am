@@ -1,1 +1,1 @@
-dist_data_DATA=test.rb
+noinst_DATA=test.rb

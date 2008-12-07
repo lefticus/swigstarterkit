@@ -1,0 +1,7 @@
+Executing 'make' will generate all the files needed to build the perl module including build/setup.py
+
+The command:
+
+python setup.py install
+
+Will generate build and install the python module so that it can be used.
