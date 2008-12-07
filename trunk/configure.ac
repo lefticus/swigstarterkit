@@ -39,5 +39,7 @@ AC_CONFIG_FILES([Makefile
                  swig/ruby/Makefile
                  swig/ruby/examples/Makefile
                  swig/java/Makefile
-                 swig/java/examples/Makefile])
+                 swig/java/examples/Makefile
+                 swig/csharp/Makefile
+                 swig/csharp/examples/Makefile])
 AC_OUTPUT

@@ -1,1 +1,1 @@
-dist_data_DATA=test.pl
+noinst_DATA=test.pl

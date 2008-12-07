@@ -1,28 +1,27 @@
 SUBDIRS=examples
 
-BUILT_SOURCES = $(PACKAGE_NAME)_wrap.cpp
-bin_SCRIPTS = setup.py
-dist_data_DATA = languagespecific.i
+BUILT_SOURCES = build/$(PACKAGE_NAME)_wrap.cpp build/setup.py
+noinst_SCRIPTS = languagespecific.i README
 
-$(PACKAGE_NAME)_wrap.cpp: ../scriptinterface.i languagespecific.i
+build/$(PACKAGE_NAME)_wrap.cpp: ../scriptinterface.i languagespecific.i $(top_srcdir)/include/scriptinterface.hpp
 	if [ ! -d build ]; then mkdir build; fi
-	swig -c++ -python -o $(PACKAGE_NAME)_wrap.cpp -I$(top_srcdir)/include -outdir . ../scriptinterface.i
+	swig -c++ -python -o build/$(PACKAGE_NAME)_wrap.cpp -I$(top_srcdir)/include -outdir build ../scriptinterface.i
 
-setup.py:
-	echo "#!/usr/bin/python" > setup.py
-	echo "from distutils.core import setup, Extension" >> setup.py
-	echo "setup(name='$(PACKAGE_NAME)'," >> setup.py
-	echo "version='$(PACKAGE_VERSION)'," >> setup.py
-	echo "include_dirs=['../../include']," >> setup.py
-	echo "py_modules=['$(PACKAGE_NAME)']," >> setup.py
-	echo "author='Jason Turner'," >> setup.py
-	echo "author_email='$(PACKAGE_BUGREPORT)'," >> setup.py
-	echo "url='http://blog.emptycrate.com'," >> setup.py
-	echo "description='Python wrapper to the C++ $(PACKAGE_NAME) library'," >> setup.py
-	echo "ext_modules=[Extension('_$(PACKAGE_NAME)', ['$(PACKAGE_NAME)_wrap.cpp']," >> setup.py
-	echo "library_dirs=['../../src/.libs']," >> setup.py
-	echo "libraries=['SSK']," >> setup.py
-	echo ")]," >> setup.py
-	echo ")" >> setup.py
-	chmod +x setup.py
+build/setup.py:
+	echo "#!/usr/bin/python" > build/setup.py
+	echo "from distutils.core import setup, Extension" >> build/setup.py
+	echo "setup(name='$(PACKAGE_NAME)'," >> build/setup.py
+	echo "version='$(PACKAGE_VERSION)'," >> build/setup.py
+	echo "include_dirs=['../../include']," >> build/setup.py
+	echo "py_modules=['$(PACKAGE_NAME)']," >> build/setup.py
+	echo "author='Jason Turner'," >> build/setup.py
+	echo "author_email='$(PACKAGE_BUGREPORT)'," >> build/setup.py
+	echo "url='http://blog.emptycrate.com'," >> build/setup.py
+	echo "description='Python wrapper to the C++ $(PACKAGE_NAME) library'," >> build/setup.py
+	echo "ext_modules=[Extension('_$(PACKAGE_NAME)', ['$(PACKAGE_NAME)_wrap.cpp']," >> build/setup.py
+	echo "library_dirs=['../../src/.libs']," >> build/setup.py
+	echo "libraries=['SSK']," >> build/setup.py
+	echo ")]," >> build/setup.py
+	echo ")" >> build/setup.py
+	chmod +x build/setup.py
 

@@ -1,13 +1,16 @@
 SUBDIRS=examples
 
-BUILT_SOURCES = $(PACKAGE_NAME)_wrap.cpp
-bin_SCRIPTS = build/Makefile.PL
-dist_data_DATA = languagespecific.i
+BUILT_SOURCES = build/$(PACKAGE_NAME)_wrap.cpp
+noinst_SCRIPTS = build/Makefile.PL
+noinst_DATA = languagespecific.i README
 
-$(PACKAGE_NAME)_wrap.cpp: ../scriptinterface.i languagespecific.i
+# Build the SWIG based dynamic library for loading with Perl
+build/$(PACKAGE_NAME)_wrap.cpp: ../scriptinterface.i languagespecific.i $(top_srcdir)/include/scriptinterface.hpp
 	if [ ! -d build ]; then mkdir build; fi
 	swig -c++ -perl -o ./build/$(PACKAGE_NAME)_wrap.cpp -I$(top_srcdir)/include -outdir ./build ../scriptinterface.i
 
+# Build Makefile.PL which uses the perl MakeMaker to generate a perl module
+# from the SWIG output
 build/Makefile.PL: 
 	echo "#!/usr/bin/perl" > build/Makefile.PL
 	echo "use ExtUtils::MakeMaker;" >> build/Makefile.PL

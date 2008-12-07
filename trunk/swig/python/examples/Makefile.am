@@ -1,1 +1,1 @@
-dist_data_DATA=test.py
+noinst_DATA=test.py

@@ -1,0 +1,5 @@
+Java support is half backed at the moment, without automatic make file creation.
+
+Running 'make install' here will get you the library libswigstarterkit_jni.so installed in $prefix.
+
+examples/test.java and build/*.java contain the rest of the files needed to build the test project.

@@ -1,5 +1,7 @@
 public class test {
   static {
+    //Load the library based off of the lib filename, not the module
+    //name used to create it
     System.loadLibrary("swigstarterkit_jni");
   }
 

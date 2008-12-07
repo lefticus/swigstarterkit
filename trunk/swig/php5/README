@@ -1,0 +1,14 @@
+NOTE: PHP5 support is NOT fully working. Anyone who is able to help with this, please do.
+
+It may be as simple as upgrading my version of swig, but I am currently trying to stick with what is available in the latest shipping Ubuntu.
+
+A 'make install' here will create the file:
+
+build/config.m4
+
+to build the (non-working) php module:
+
+cd build
+phpize
+./configure
+make install

@@ -1,10 +1,10 @@
 SUBDIRS=examples
 
-BUILT_SOURCES = $(PACKAGE_NAME)_wrap.cpp
-bin_SCRIPTS = build/extconf.rb
-dist_data_DATA = languagespecific.i
+BUILT_SOURCES = build/$(PACKAGE_NAME)_wrap.cpp
+noinst_SCRIPTS = build/extconf.rb
+noinst_DATA = languagespecific.i README
 
-$(PACKAGE_NAME)_wrap.cpp: ../scriptinterface.i languagespecific.i
+build/$(PACKAGE_NAME)_wrap.cpp: ../scriptinterface.i languagespecific.i
 	if [ ! -d build ]; then mkdir build; fi
 	swig -c++ -ruby -o ./build/$(PACKAGE_NAME)_wrap.cpp -I$(top_srcdir)/include -outdir ./build ../scriptinterface.i
 
