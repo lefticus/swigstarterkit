@@ -1,0 +1,5 @@
+test.exe: test.cs ../build/swigstarterkit.dll
+	gmcs test.cs -reference:../build/swigstarterkit.dll
+
+test: test.exe
+	MONO_PATH=../build ./test.exe

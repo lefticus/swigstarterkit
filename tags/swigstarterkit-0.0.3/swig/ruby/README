@@ -1,0 +1,7 @@
+Executing 'make' will generate all the files needed to build the ruby module including build/extconf.rb
+
+The command:
+
+ruby extconf.rb
+
+Will generate a Makefile appropriate for building and installing the ruby module

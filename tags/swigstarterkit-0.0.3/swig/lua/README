@@ -1,0 +1,15 @@
+Lua is the only language with embedded support, currently.
+
+A top level make will provide an executable at src/ssk which uses the embedded lua feature.
+
+example:
+
+'src/ssk lua swig/lua/examples/test.lua'
+
+I have not yet figured out how to change the search path that lua uses to find loadable modules for the standalone case.
+
+So, to use the lua loadable module you might do this:
+
+cd examples
+cp ../.libs/swigstarterkit.so .
+lua loadabletest.lua
