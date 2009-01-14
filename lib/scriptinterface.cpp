@@ -69,5 +69,10 @@ namespace swigstarterkit
     p_impl->add_script_response(response);
   }
 
+  std::string Script_Interface::overloadable_string_get() 
+  {
+    return "String From Base Class";
+  }
+
 }
 
