@@ -20,7 +20,7 @@
    THE SOFTWARE.
 */
 
-%module swigstarterkit
+%module(directors="1") swigstarterkit;
 
 %include "languagespecific.i"
 

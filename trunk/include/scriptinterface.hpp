@@ -43,12 +43,11 @@ namespace swigstarterkit
       std::sort(t.begin(), t.end());
     }
 
-
   class Script_Interface
   {
     public:
       Script_Interface();
-      ~Script_Interface();
+      virtual ~Script_Interface();
 
       int get_a_value();
 
@@ -56,9 +55,16 @@ namespace swigstarterkit
       std::vector<std::string> &get_script_responses();
       void add_script_response(const std::string &response);
 
+      virtual std::string overloadable_string_get();
+
     private:
       Script_Interface_Impl *p_impl;
   };
+
+  std::string get_string(Script_Interface &si)
+  {
+    return si.overloadable_string_get();
+  }
 }
 
 #endif
