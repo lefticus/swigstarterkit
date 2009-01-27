@@ -1,6 +1,6 @@
 SUBDIRS=examples
 
-BUILT_SOURCES = swigstarterkit_wrap.cpp
+BUILT_SOURCES = swigstarterkit_wrap.cpp build/Makefile
 noinst_DATA = languagespecific.i README
 
 AM_CPPFLAGS = -I$(top_srcdir)/include -I/usr/lib/jvm/java-6-sun-1.6.0.10/include/ -I/usr/lib/jvm/java-6-sun-1.6.0.10/include/linux
@@ -19,4 +19,10 @@ swigstarterkit_wrap.cpp: ../scriptinterface.i languagespecific.i $(top_srcdir)/i
 	if [ ! -d build ]; then mkdir build; fi
 	swig -c++ -java -o ./swigstarterkit_wrap.cpp -I$(top_srcdir)/include -outdir ./build ../scriptinterface.i
 
+build/Makefile: swigstarterkit_wrap.cpp
+	echo swigstarterkit.jar: `find build/*.java -printf "%f "` > build/Makefile
+	echo -e -n "\tjavac " >> build/Makefile
+	echo `find build/*.java -printf "%f "`>>  build/Makefile
+	echo -e -n "\tjar cf swigstarterkit.jar " >> build/Makefile
+	echo `find build/*.class -printf "%f "` >> build/Makefile
 

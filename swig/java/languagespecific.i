@@ -21,4 +21,5 @@
 */
 
 // java languagespecific.i 
-// Nothing to do
+
+%feature("director");

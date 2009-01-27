@@ -1,0 +1,5 @@
+test.class: test.java Script_Interface_Derived.java ../build/swigstarterkit.jar
+	javac -cp ../build/swigstarterkit.jar *.java
+
+test: test.class
+	LD_LIBRARY_PATH=../.libs java -cp ../build/swigstarterkit.jar:. test
