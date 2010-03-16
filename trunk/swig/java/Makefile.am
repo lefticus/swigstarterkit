@@ -3,7 +3,7 @@ SUBDIRS=examples
 BUILT_SOURCES = swigstarterkit_wrap.cpp build/Makefile
 noinst_DATA = languagespecific.i README
 
-AM_CPPFLAGS = -I$(top_srcdir)/include -I/usr/lib/jvm/java-6-sun-1.6.0.10/include/ -I/usr/lib/jvm/java-6-sun-1.6.0.10/include/linux
+AM_CPPFLAGS = -I$(top_srcdir)/include -I/usr/lib/jvm/java-6-sun-1.6.0.10/include/ -I/usr/lib/jvm/java-6-sun-1.6.0.10/include/linux -I/usr/lib/jvm/java-6-openjdk/include/
 
 lib_LTLIBRARIES = libswigstarterkit_jni.la
 

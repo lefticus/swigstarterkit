@@ -35,4 +35,5 @@
 %include "scriptinterface.hpp"
 
 %template(String_Vector) std::vector<std::string>;
+%template(SI_Vector) std::vector<swigstarterkit::Script_Interface>;
 %template(String_Vector_Sort) swigstarterkit::sort<std::vector<std::string> >;
